@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          path: gh-pages
       - run: |
             git rm time_series_covid19_confirmed_global_narrow.csv
             git rm time_series_covid19_deaths_global_narrow.csv
