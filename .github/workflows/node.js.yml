@@ -3,10 +3,16 @@
 
 name: Node.js CI
 
-on:
-  schedule: 
-  - cron:  '0 3/12 * * *'
-    
+on: 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
+        
 jobs:
   diff:
     runs-on: ubuntu-latest
